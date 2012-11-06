@@ -500,12 +500,12 @@ We need to change the test for edit 'AlbumControllerTest'  in ``module/Album/tes
 
     <?php
     ...
-    public function testAddActionCanBeAccessed()
+    public function testEditActionCanBeAccessed()
     {
-        $this->routeMatch->setParam('action', 'add');
-        $this->routeMatch->setParam('id', '1');//Add this Row
+        $this->routeMatch->setParam('action', 'edit');
+        $this->routeMatch->setParam('id', '1'); // add this Row
 
-        $result   = $this->controller->dispatch($this->request);
+        $result = $this->controller->dispatch($this->request);
         $response = $this->controller->getResponse();
 
         $this->assertEquals(200, $response->getStatusCode());
